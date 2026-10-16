@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Login | Project Hybrid</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="nav"><a class="brand" href="/">PROJECT <b>HYBRID</b></a><nav><a href="/">Back to store</a></nav></header>
+<main class="login-wrap">
+  <p class="eyebrow">AUTHORIZED ACCESS ONLY</p><h1>Admin login<span class="lime-dot">.</span></h1>
+  <div th:if="${param.error}" class="error">Incorrect username or password.</div>
+  <div th:if="${param.logout}" class="notice">You have been signed out.</div>
+  <form class="admin-form login-form" th:action="@{/login}" method="post">
+    <label class="wide">Username<input name="username" autocomplete="username" required autofocus></label>
+    <label class="wide">Password<input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn lime wide" type="submit">SIGN IN</button>
+  </form>
+  <p class="muted">For store staff only. Do not share your password.</p>
+</main>
+<footer><a class="brand" href="/">PROJECT <b>HYBRID</b></a><span>Store administration</span></footer>
+</body></html>
